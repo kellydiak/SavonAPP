@@ -3,6 +3,7 @@ import { AboutPage } from './pages/about-page/about-page';
 import { AccountManagerPage } from './pages/account-manager-page/account-manager-page';
 import { HomePage } from './pages/home-page/home-page';
 import { IngredientsManagerPage } from './pages/ingredients-manager-page/ingredients-manager-page';
+import { LegalNoticesPages } from './pages/legal-notices-pages/legal-notices-pages';
 import { LoginPage } from './pages/login-page/login-page';
 import { RecipeCalculatorPage } from './pages/recipe-calculator-page/recipe-calculator-page';
 import { RecipeManagerPage } from './pages/recipe-manager-page/recipe-manager-page';
@@ -30,7 +31,10 @@ export const routes: Routes = [
 { path: 'users-manager', component: UsersManagerPage },
 { path: 'ingredients-manager', component: IngredientsManagerPage},
 
-// A propos (redirection vers home en cas d'url invalide):
+// Informations - Mentions Legales
+{path: 'legal-notices', component: LegalNoticesPages},
+
+// Informations - A propos (redirection vers home en cas d'url invalide):
 { path: "about", component: AboutPage } // Toujours mis en dernier !
 
 ];
