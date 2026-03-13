@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Ingredient } from '../models/ingredient.model';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root', // Pour dire que le service est dispo sur toute l'appli
 })
 export class IngredientService {
 
@@ -26,6 +26,29 @@ export class IngredientService {
 getIngredientById(id: number): Observable<Ingredient> {
 return this.http.get<Ingredient>(`${this.API_URL_INGREDIENT}/${id}`);
 }
+
+/** * Ajoute un nouvel ingrédient.
+*/
+addIngredient(ingredient: Ingredient): Observable<Ingredient> {
+return this.http.post<Ingredient>(this.API_URL_INGREDIENT, ingredient);
+}
+/** * Met à jour un ingrédient existant.
+*/
+updateIngredient(ingredient: Ingredient): Observable<Ingredient> {
+return this.http.put<Ingredient>
+(`${this.API_URL_INGREDIENT}/${ingredient.id}`, ingredient);
+}
+/** * Supprime un ingrédient par son ID.
+*/
+deleteIngredient(id: number): Observable<void> {
+return this.http.delete<void>(`${this.API_URL_INGREDIENT}/${id}`);
+}
+/** * Supprime tous les ingrédients de la base.
+*/
+deleteAllIngredients(): Observable<void> {
+return this.http.delete<void>(`${this.API_URL_INGREDIENT}/all`);
+}
+
 // TODO : Créer plus tard les méthodes manquantes :
 // - deleteIngredients(id: number)
 // - deleteAllIngredients()
