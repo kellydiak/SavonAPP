@@ -75,5 +75,7 @@ export class IngredientsManagerPage implements OnInit {
 }
     // TODO : Créer les méthodes :
     // - saveIngredient(ingredient: Ingredient) -> Ajout ou met à jour l'ingrédient passé en argument
-    // - deleteIngredient(id: number) -> Surppime l'ingrédient de clé primaire id
-    // - deleteAllIngredients() - > Supprimer tous les ingrédients
+    // - deleteIngredient(id: number) -> Surppime l'ingrédient de clé primaire id ya deja ?
+    // - deleteAllIngredients() : void { if (confirm("Supprimer tous les ingrédients ?")) { this.ingredientService.deleteAllIngredients().subscribe(() => this.getIngredients()); } }
+    // 
+    //- > Supprimer tous les ingrédients
