@@ -12,6 +12,9 @@ import { RecetteService } from '../../services/recette.service';
 })
 export class RecipeManagerPage implements OnInit {
 
+  // Propriété pour stocker la recette à afficher dans la modale
+  public recetteSelectionnee: Recette | null = null;
+
   public recettes: Recette[] = []; // Tableau de stockage des recettes
 
   constructor(private recetteService: RecetteService) { }
@@ -41,6 +44,21 @@ export class RecipeManagerPage implements OnInit {
         this.getRecettes());
     }
   }
+
+  /**
+* Définit la recette sélectionnée pour l'affichage des détails
+*/
+  ouvrirModale(recette: Recette): void {
+    this.recetteSelectionnee = recette;
+  }
+  /**
+  * Réinitialise la sélection à la fermeture
+  */
+  fermerModale(): void {
+    this.recetteSelectionnee = null;
+  }
+
+
 }
 
 
