@@ -10,7 +10,7 @@ titre: string;
 description: string;
 surgraissage: number;
 avecSoude: boolean;
-concentrationAlcali: number;
+concentrationAlcalin: number;
 ligneIngredients: LigneIngredientDTO[];
 }
 
