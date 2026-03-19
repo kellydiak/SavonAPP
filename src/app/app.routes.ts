@@ -9,6 +9,7 @@ import { RecipeCalculatorPage } from './pages/recipe-calculator-page/recipe-calc
 import { RecipeManagerPage } from './pages/recipe-manager-page/recipe-manager-page';
 import { SubscribePage } from './pages/subscribe-page/subscribe-page';
 import { UsersManagerPage } from './pages/users-manager-page/users-manager-page';
+import { authGuard } from './guards/auth-guard';
 
 export const routes: Routes = [
 
@@ -25,16 +26,19 @@ export const routes: Routes = [
 
 // Recettes :
 { path: 'recipe-calculator', component: RecipeCalculatorPage },
-{ path: 'recipe-manager', component: RecipeManagerPage},
+{ path: 'recipe-manager', component: RecipeManagerPage, canActivate: [authGuard] },
 
 // Administration - Gestion :
-{ path: 'users-manager', component: UsersManagerPage },
+{ path: 'users-manager', component: UsersManagerPage, canActivate: [authGuard] },
 { path: 'ingredients-manager', component: IngredientsManagerPage},
 
 // Informations - Mentions Legales
 {path: 'legal-notices', component: LegalNoticesPages},
 
-// Informations - A propos (redirection vers home en cas d'url invalide):
-{ path: "about", component: AboutPage } // Toujours mis en dernier !
+// Informations - A proposng 
+{ path: "about", component: AboutPage }, 
+
+// Redirection par défaut vers home (en cas d'url invalide) :
+{path: '**', redirectTo: 'home'} // Toujours mis en dernier !
 
 ];
