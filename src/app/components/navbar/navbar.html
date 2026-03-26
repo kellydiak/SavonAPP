@@ -25,15 +25,15 @@
                     </a>
                 </li>
                 <!-- Accès aux recettes de l'utilisateur -->
-                 @if (authService.isAuthenticated()) {
-                    @if (authService.hasRole('ROLE_ADMIN, ROLE_UTILISATEUR')) {
+                 <!--@if (authService.isAuthenticated()) {
+                    @if (authService.hasRole('ROLE_ADMIN, ROLE_UTILISATEUR')) {-->
                 <li class="nav-item"><a class="nav-link" routerLink="recipe-manager" routerLinkActive="active" title="Gérer mes recettes (retrouver ,modifier,supprimer...)">
                         <i class="bi bi-journal-text"> </i>
                         Mes recettes
                     </a>
                 </li>
-            }
-        }
+            <!--}
+        }-->
                 <!-- Accès gestion des utilisateurs pour l'administrateur -->
                 @if (authService.isAuthenticated()) {
                     @if (authService.hasRole('ROLE_ADMIN')) {
